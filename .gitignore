@@ -1,0 +1,64 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Django stuff:
+*.log
+*.pot
+*.pyc
+*.pyo
+*.pyd
+*.sqlite3
+
+# If you are using Docker:
+*.dockerfile
+
+# If you are using coverage reports:
+htmlcov/
+
+# If you are using SQL database files:
+*.db
+
+# Secrets
+.env
+
+# Environment variables
+.envrc
+.env.development.local
+.env.test.local
+.env.production.local
+.env.local
+
+# Node.js
+node_modules/
+
+# Logs
+logs/
+*.log
+
+# virtualenv
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# django-extensions
+*.coverage
+.coverage.*
+
+# pyenv
+.python-version
+
+# VS Code
+.vscode/
+
+# macOS
+.DS_Store
+
+# Docker
+**/venv
+.dockerignore
+**/*.dockerignore
+docker-compose*.yml
+Dockerfile
