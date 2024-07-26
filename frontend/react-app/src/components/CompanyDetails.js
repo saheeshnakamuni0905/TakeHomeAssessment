@@ -1,7 +1,7 @@
 // src/components/CompanyDetails.js
 import React, { useEffect, useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
-import axios from 'axios';
+import axios from '../axios';
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
 
 function CompanyDetails() {
@@ -11,11 +11,11 @@ function CompanyDetails() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    axios.get(`/api/companies/${id}`)
+    axios.get(`companies/${id}/`)
       .then(response => setCompany(response.data))
       .catch(error => console.error('Error fetching company details:', error));
 
-    axios.get(`/api/companies/${id}/locations`)
+    axios.get(`companies/${id}/locations/`)
       .then(response => setLocations(response.data))
       .catch(error => console.error('Error fetching locations:', error));
   }, [id]);
@@ -24,8 +24,19 @@ function CompanyDetails() {
 
   return (
     <div>
+      <button onClick={() => {
+  console.log('Navigating back to list');
+  navigate('/');
+}}>Back to List</button>
       <h1>{company.name}</h1>
       <p>{company.address}</p>
+      <ul>
+        {locations.map(location => (
+          <li key={location.location_id}>
+            {location.name}: {location.address}
+          </li>
+        ))}
+      </ul>
       <MapContainer center={[company.latitude, company.longitude]} zoom={13} style={{ height: '400px', width: '100%' }}>
         <TileLayer
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
@@ -40,14 +51,7 @@ function CompanyDetails() {
           </Marker>
         ))}
       </MapContainer>
-      <ul>
-        {locations.map(location => (
-          <li key={location.location_id}>
-            {location.name}: {location.address}
-          </li>
-        ))}
-      </ul>
-      <button onClick={() => navigate('/')}>Back to List</button>
+
     </div>
   );
 }
