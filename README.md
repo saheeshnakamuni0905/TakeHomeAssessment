@@ -72,5 +72,9 @@ To run the tests for both frontend and backend, use the following commands:
 
 ## Contact
 
-For any questions or issues, please contact Saheeshna Kamuni.
+For any questions or inquiries, please feel free to reach out:
+
+- LinkedIn: [Saheeshna Kamuni]([https://www.linkedin.com/in/your-profile](https://www.linkedin.com/in/saheeshna-kamuni-30a09b62/))
+- Email: kamuni.s@northeastern.edu
+- Portfolio : https://main--saheeshnakamuni.netlify.app/
 
