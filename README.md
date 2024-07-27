@@ -26,10 +26,9 @@ This project is a web application that displays a list of companies and their de
 
 ## Accessing the Application
 
-- **Frontend**: Open your browser and navigate to [http://localhost:3000](http://localhost:3000).
-- **Backend API**: The backend API is accessible at [http://localhost:8000/api](http://localhost:8000/api).
-- **Swagger UI**: For API documentation, open [http://localhost:8000/swagger/](http://localhost:8000/swagger/).
-
+- **Frontend**: Open your browser and navigate to [http://localhost:3000](http://localhost:3000)
+- **Backend API**: The backend API is accessible at [http://localhost:8000/api](http://localhost:8000/api)
+- **Swagger UI**: For API documentation, open [http://localhost:8000/api/swagger/](http://localhost:8000/api/swagger/)
 ## Additional Notes
 
 - If you encounter any issues with the Docker containers, try rebuilding them using:
@@ -74,7 +73,7 @@ To run the tests for both frontend and backend, use the following commands:
 
 For any questions or inquiries, please feel free to reach out:
 
-- LinkedIn: [Saheeshna Kamuni]([https://www.linkedin.com/in/your-profile](https://www.linkedin.com/in/saheeshna-kamuni-30a09b62/))
+- LinkedIn: [Saheeshna Kamuni](https://www.linkedin.com/in/saheeshna-kamuni-30a09b62/)
 - Email: kamuni.s@northeastern.edu
 - Portfolio : https://main--saheeshnakamuni.netlify.app/
 
