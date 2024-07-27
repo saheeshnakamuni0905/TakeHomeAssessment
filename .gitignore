@@ -1,50 +1,8 @@
-# Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
-*$py.class
-
-# Django stuff:
 *.log
-*.pot
-*.pyc
-*.pyo
-*.pyd
 *.sqlite3
-
-.gitignore
-
-
-
-# Secrets
 .env
-
-# Environment variables
-.envrc
-.env.development.local
-.env.test.local
-.env.production.local
-.env.local
-
-# Node.js
 node_modules/
-
-
-# virtualenv
 venv/
 ENV/
-env.bak/
-venv.bak/
-
-# django-extensions
-*.coverage
-.coverage.*
-
-# pyenv
-.python-version
-
-# VS Code
-.vscode/
-
-# macOS
-.DS_Store
-
