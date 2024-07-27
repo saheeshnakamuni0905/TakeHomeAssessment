@@ -11,14 +11,7 @@ __pycache__/
 *.pyd
 *.sqlite3
 
-# If you are using Docker:
-*.dockerfile
 
-# If you are using coverage reports:
-htmlcov/
-
-# If you are using SQL database files:
-*.db
 
 # Secrets
 .env
@@ -33,9 +26,6 @@ htmlcov/
 # Node.js
 node_modules/
 
-# Logs
-logs/
-*.log
 
 # virtualenv
 venv/
@@ -56,9 +46,3 @@ venv.bak/
 # macOS
 .DS_Store
 
-# Docker
-**/venv
-.dockerignore
-**/*.dockerignore
-docker-compose*.yml
-Dockerfile
