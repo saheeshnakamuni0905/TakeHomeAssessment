@@ -3,17 +3,29 @@ import React, { useEffect, useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import axios from '../axios';
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
-import 'leaflet/dist/leaflet.css'; 
+import 'leaflet/dist/leaflet.css';
+import CompanyChart from './CompanyChart';
 
 function CompanyDetails() {
   const { id } = useParams();
   const [company, setCompany] = useState(null);
   const [locations, setLocations] = useState([]);
+  const [chartData, setChartData] = useState({ labels: [], values: [] });
   const navigate = useNavigate();
 
   useEffect(() => {
     axios.get(`companies/${id}/`)
-      .then(response => setCompany(response.data))
+      .then(response => {
+        setCompany(response.data);
+
+        // Assuming the API returns these fields
+        const { revenue, number_of_employees } = response.data;
+        
+        setChartData({
+          labels: ['Revenue', 'Number of Employees'],
+          values: [revenue, number_of_employees],
+        });
+      })
       .catch(error => console.error('Error fetching company details:', error));
 
     axios.get(`companies/${id}/locations/`)
@@ -25,10 +37,7 @@ function CompanyDetails() {
 
   return (
     <div>
-      <button onClick={() => {
-  console.log('Navigating back to list');
-  navigate('/');
-}}>Back to List</button>
+      <button onClick={() => navigate('/')}>Back to List</button>
       <h1>{company.name}</h1>
       <p>{company.address}</p>
       <ul>
@@ -38,6 +47,7 @@ function CompanyDetails() {
           </li>
         ))}
       </ul>
+      <CompanyChart data={chartData} />
       <MapContainer center={[company.latitude, company.longitude]} zoom={13} style={{ height: '400px', width: '100%' }}>
         <TileLayer
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
@@ -52,7 +62,6 @@ function CompanyDetails() {
           </Marker>
         ))}
       </MapContainer>
-
     </div>
   );
 }
